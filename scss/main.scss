@@ -1,0 +1,162 @@
+body {
+    font-family: 'Poppins';
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px !important;
+    }
+}
+
+// Variables
+$primaryC: #2bd383;
+$secondaryC: #161616;
+$thirdC: #1a1e1a;
+$paraC: #737373;
+$grad1: linear-gradient(120deg, #11998e, #38ef7d);
+$grad1rev: linear-gradient(120deg, #38ef7d, #11998e);
+$grad2: linear-gradient(45deg, #11998e, #38ef7d);
+$grad3: linear-gradient(45deg, rgba(17, 153, 142, 0.7), rgba(56, 239, 125, 0.7));
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin setTransition($elem, $time) {
+    -webkit-transition: $elem $time;
+    -moz-transition: $elem $time;
+    -ms-transition: $elem $time;
+    -o-transition: $elem $time;
+    transition: $elem $time;
+}
+
+// Section Titles
+section {
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.section_title {
+    margin-bottom: 60px;
+    h3 {
+        font-size: 36px;
+        line-height: 48px;
+        color: $secondaryC;
+        font-weight: 500;
+    }
+    p {
+        font-size: 14px;
+        line-height: 24px;
+        color: $paraC;
+        font-weight: 400;
+        letter-spacing: 0.18px;
+        max-width: 800px;
+    }
+}
+
+// Preloader Animations
+@keyframes folding {
+    0%,
+    10% {
+        -moz-transform: perspective(140px) rotateX(-180deg);
+        -ms-transform: perspective(140px) rotateX(-180deg);
+        -webkit-transform: perspective(140px) rotateX(-180deg);
+        transform: perspective(140px) rotateX(-180deg);
+        opacity: 0;
+    }
+    25%,
+    75% {
+        -moz-transform: perspective(140px) rotateX(0deg);
+        -ms-transform: perspective(140px) rotateX(0deg);
+        -webkit-transform: perspective(140px) rotateX(0deg);
+        transform: perspective(140px) rotateX(0deg);
+        opacity: 1;
+    }
+    90%,
+    100% {
+        -moz-transform: perspective(140px) rotateY(180deg);
+        -ms-transform: perspective(140px) rotateY(180deg);
+        -webkit-transform: perspective(140px) rotateY(180deg);
+        transform: perspective(140px) rotateY(180deg);
+        opacity: 0;
+    }
+}
+
+// Preloader
+.loading_overlay {
+    background: #ffffff;
+    color: #2bd383;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    .loading_inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        font-size: 0px;
+        line-height: normal;
+        transform: rotate(45deg);
+        span {
+            position: relative;
+            width: 25px;
+            height: 25px;
+            transform: scale(1.1);
+            display: inline-block;
+            &::before {
+                content: "";
+                background: #2bd383;
+                position: absolute;
+                left: 0;
+                top: 0;
+                display: block;
+                width: 25px;
+                height: 25px;
+                -moz-transform-origin: 100% 100%;
+                -ms-transform-origin: 100% 100%;
+                -webkit-transform-origin: 100% 100%;
+                transform-origin: 100% 100%;
+                -webkit-animation: folding 2.50s infinite linear both;
+                -moz-animation: folding 2.50s infinite linear both;
+                -ms-animation: folding 2.50s infinite linear both;
+                -o-animation: folding 2.50s infinite linear both;
+                animation: folding 2.50s infinite linear both;
+            }
+        }
+        span.leaf2 {
+            transform: rotateZ(90deg) scale(1.1);
+            &::before {
+                animation-delay: .30s;
+                background-color: #1a1e1a;
+            }
+        }
+        span.leaf3 {
+            transform: rotateZ(270deg) scale(1.1);
+            &::before {
+                animation-delay: .90s;
+                background-color: #1a1e1a;
+            }
+        }
+        span.leaf4 {
+            transform: rotateZ(180deg) scale(1.1);
+            &::before {
+                animation-delay: .60s;
+                background-color: #2bd383;
+            }
+        }
+    }
+}
+
+@import "home";
+@import "about";
+@import "services";
+@import "blog";
+@import "blog-single";
+@import "contact";

@@ -1,0 +1,68 @@
+// Contact Heading Section
+#contact {
+    padding: 100px 0;
+    width: 100%;
+    background-image: url("http://corpthemes.com/html/ibox/images/parallax/parallax-page.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: white;
+        opacity: 0.5;
+    }
+    .section_title {
+        z-index: 1;
+        margin-bottom: 0;
+        h3 {
+            margin-bottom: 15px;
+        }
+        .page_address {
+            ul {
+                padding: 0;
+                margin-bottom: 24px;
+                li {
+                    position: relative;
+                    display: inline-block;
+                    margin-right: 5px;
+                    color: #1a1e1a;
+                    font-weight: 500;
+                    position: relative;
+                    font-size: 14px;
+                    a {
+                        color: $secondaryC;
+                        @include setTransition(all,
+                        .3s);
+                        &:hover {
+                            color: $primaryC;
+                            text-decoration: none;
+                        }
+                    }
+                }
+                i {
+                    font-size: 12px;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+// Contact Form Section
+#contact_form{
+    padding: 100px 0;
+    h1{
+        margin-bottom: 40px;
+    }
+}
+
+// Map
+#map{
+    border-bottom: 0;
+}

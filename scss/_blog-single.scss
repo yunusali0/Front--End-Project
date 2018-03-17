@@ -1,0 +1,345 @@
+// Blog Single
+h5 {
+    margin-bottom: 20px;
+}
+
+.article {
+    padding-right: 95px;
+    .post-img {
+        margin-bottom: 25px;
+        img{
+            max-width: 100%;
+        }
+    }
+    .post-title {
+        padding-bottom: 5px;
+        border-bottom: 1px solid #f2f2f2;
+        margin-bottom: 25px;
+        ul {
+            li {
+                display: inline-block;
+                margin-right: 15px;
+                i,
+                a {
+                    font-size: 14px;
+                    color: $paraC;
+                    font-weight: 400;
+                    line-height: 20px;
+                    @include setTransition(all, .3s);
+                }
+                i {
+                    margin-right: 5px;
+                }
+                a:hover {
+                    color: $primaryC;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .post-article {
+        .text-box {
+            color: $paraC;
+            margin-bottom: 20px;
+            p {
+                font-size: 14px;
+                line-height: 26px;
+                letter-spacing: .5px;
+            }
+            blockquote {
+                padding: 20px 0 20px 80px;
+                position: relative;
+                font-size: 16px;
+                line-height: 32px;
+                color: $thirdC;
+                font-weight: 500;
+                &::before {
+                    content: "“";
+                    position: absolute;
+                    top: 130px;
+                    left: -10px;
+                    font-size: 250px;
+                    color: $paraC;
+                }
+            }
+        }
+    }
+    .post-share {
+        background: #f7f7f7;
+        padding: 10px 30px;
+        margin: 35px 0;
+        ul {
+            display: inline-block;
+            margin-bottom: 0;
+            align-items: baseline;
+            li {
+                display: inline-block;
+                a {
+                    display: block;
+                    font-size: 14px;
+                    line-height: 29px;
+                    color: $paraC;
+                    @include setTransition(all, .3s);
+                    &.social_link {
+                        display: block;
+                        height: 22px;
+                        width: 22px;
+                        font-size: 18px;
+                        text-align: center;
+                        margin-left: 10px;
+                        &:hover {
+                            font-size: 20px;
+                            color: $paraC;
+                        }
+                    }
+                    &:hover {
+                        color: $primaryC;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.related {
+    width: 100%;
+    margin: 25px 0;
+    padding-right: 95px;
+    .card {
+        border: none;
+        .card-img {
+            position: relative;
+            overflow: hidden;
+            @include border-radius(0);
+            &::before {
+                content: "\f00c";
+                font-family: 'font awesome 5 free';
+                font-weight: 900;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                height: 70px;
+                width: 70px;
+                line-height: 70px;
+                font-size: 40px;
+                color: white;
+                @include border-radius(50%);
+                background: rgba(255, 255, 255, 0.3);
+                z-index: 2;
+                opacity: 0;
+                visibility: hidden;
+                @include setTransition(all, .3s);
+            }
+            .overlay {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                transform: translate(0, 100%);
+                background: $grad2;
+                opacity: 0;
+                visibility: hidden;
+                @include setTransition(all, .3s);
+            }
+            &:hover {
+                &::before {
+                    opacity: 1;
+                    visibility: visible;
+                }
+                .overlay {
+                    opacity: .7;
+                    visibility: visible;
+                    transform: translate(0, 0);
+                }
+            }
+        }
+        .card-body {
+            padding: 10px 0;
+            ul {
+                margin-bottom: 0;
+                li {
+                    font-size: 14px;
+                    i {
+                        font-size: 12px;
+                    }
+                    a {
+                        color: $thirdC;
+                        @include setTransition(all, .3s);
+                        &.name {
+                            font-weight: 600;
+                        }
+                        &.date {
+                            font-size: 12px;
+                        }
+                        &:hover {
+                            color: $primaryC;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.comments {
+    padding-right: 95px;
+    h5 {
+        span {
+            color: $paraC;
+            font-size: 14px;
+        }
+    }
+    .comment-list {
+        margin-bottom: 50px;
+        .comment-item {
+            margin-bottom: 20px;
+            ul {
+                .comment {
+                    display: flex;
+                    align-content: flex-start;
+                    &.children {
+                        margin-left: 70px;
+                        padding: 20px 0 20px 10px;
+                        margin-top: 15px;
+                        border-left: 5px solid #f7f7f7;
+                        .com-content {
+                            padding-right: 20px;
+                        }
+                    }
+                    .img-left {
+                        display: inline-block;
+                        margin-right: 30px;
+                    }
+                    .com-content {
+                        display: inline-block;
+                        ol {
+                            margin-bottom: 10px;
+                            li {
+                                display: inline-block;
+                                margin-right: 10px;
+                                font-size: 14px;
+                                font-weight: 400;
+                                i {
+                                    margin-right: 5px;
+                                    font-size: 12px;
+                                }
+                                a {
+                                    color: $paraC;
+                                    @include setTransition(all, .3s);
+                                    &:hover {
+                                        color: $primaryC;
+                                        text-decoration: none;
+                                    }
+                                }
+                            }
+                        }
+                        p {
+                            margin-bottom: 0;
+                            font-size: 14px;
+                            font-weight: 300;
+                        }
+                    }
+                    .com-reply {
+                        button {
+                            font-size: 14px;
+                            font-weight: 600;
+                            color: $primaryC;
+                            padding: 10px 30px;
+                            background: white;
+                            border: 1px solid $primaryC;
+                            position: relative;
+                            @include setTransition(all, .3s);
+                            overflow: hidden;
+                            z-index: 1;
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                background: $primaryC;
+                                @include setTransition(all, .3s);
+                                transform: translate(-100%, 0);
+                                opacity: 0;
+                                visibility: hidden;
+                                z-index: -1;
+                            }
+                            &:hover {
+                                color: white;
+                                border-color: $primaryC;
+                                &::after {
+                                    opacity: 1;
+                                    visibility: visible;
+                                    transform: translate(0, 0);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+form {
+    width: 100%;
+    padding-right: 95px;
+    h5 {
+        margin-bottom: 30px;
+    }
+    .form-control {
+        padding: 10px 30px;
+        font-size: 14px;
+        &::placeholder {
+            color: #e1e1e1;
+            font-size: 14px;
+            font-style: italic;
+            font-weight: 300;
+        }
+        &:focus {
+            border: 1px solid $primaryC;
+            box-shadow: none;
+        }
+    }
+    #com_btn {
+        font-size: 14px;
+        line-height: 22px;
+        padding: 8px 30px;
+        color: white;
+        background: $primaryC;
+        border: 1px solid $primaryC;
+        position: relative;
+        overflow: hidden;
+        @include setTransition(all, .3s);
+        z-index: 1;
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            transform: translate(-100%, 0);
+            background: $secondaryC;
+            @include setTransition(all, .3s);
+            opacity: 0;
+            visibility: hidden;
+            z-index: -1;
+        }
+        &:hover {
+            color: $primaryC;
+            border-color: $secondaryC;
+            &::before {
+                opacity: 1;
+                visibility: visible;
+                transform: translate(0, 0);
+            }
+        }
+    }
+}

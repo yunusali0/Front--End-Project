@@ -1,0 +1,325 @@
+// Services Heading Section
+#service {
+    padding: 100px 0;
+    width: 100%;
+    background-image: url("http://corpthemes.com/html/ibox/images/parallax/parallax-page.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: white;
+        opacity: 0.5;
+    }
+    .section_title {
+        z-index: 1;
+        margin-bottom: 0;
+        h3 {
+            margin-bottom: 15px;
+        }
+        .page_address {
+            ul {
+                padding: 0;
+                margin-bottom: 24px;
+                li {
+                    position: relative;
+                    display: inline-block;
+                    margin-right: 5px;
+                    color: #1a1e1a;
+                    font-weight: 500;
+                    position: relative;
+                    font-size: 14px;
+                    a {
+                        color: $secondaryC;
+                        @include setTransition(all,
+                        .3s);
+                        &:hover {
+                            color: $primaryC;
+                            text-decoration: none;
+                        }
+                    }
+                }
+                i {
+                    font-size: 12px;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+// Services Info Section
+#service-info {
+    padding: 100px 0;
+    #service_accord {
+        width: 95%;
+        .card {
+            border: none;
+            margin-bottom: 15px;
+            .card-header {
+                padding: 0;
+                border: none;
+                background: none;
+                button {
+                    width: 100%;
+                    text-align: left;
+                    padding: 12px 30px;
+                    background: $primaryC;
+                    @include border-radius(50px);
+                    font-size: 18px;
+                    line-height: 32px;
+                    font-weight: 500;
+                    color: white;
+                    position: relative;
+                    &.collapsed {
+                        background: #f7f7f7;
+                        color: $secondaryC;
+                        &::after {
+                            content: "+";
+                        }
+                    }
+                    &::after {
+                        content: "-";
+                        position: absolute;
+                        right: 30px;
+                        top: 50%;
+                        transform: translate(0, -50%);
+                        font-size: 24px;
+                        font-weight: 500;
+                        color: $paraC;
+                    }
+                    &:focus,
+                    &:active {
+                        outline: none;
+                        box-shadow: none;
+                    }
+                }
+            }
+            .card-body {
+                color: $paraC;
+                padding: 15px 30px;
+                font-size: 14px;
+                font-weight: 300;
+                line-height: 26px;
+            }
+        }
+    }
+    #service-car {
+        position: relative;
+        cursor: -webkit-grab;
+        .owl-nav {
+            position: absolute;
+            width: 100%;
+            top: 45%;
+            .owl-prev,
+            .owl-next {
+                position: absolute;
+                font-size: 24px;
+                height: 30px;
+                width: 30px;
+                text-align: center;
+                background: #dcdcdc;
+                line-height: 30px;
+                color: white;
+                @include setTransition(all,
+                .3s);
+                i {
+                    line-height: 30px;
+                }
+                &:hover {
+                    background: $primaryC;
+                }
+            }
+            .owl-prev {
+                left: 2%;
+            }
+            .owl-next {
+                right: 2%;
+            }
+        }
+    }
+}
+
+// Services Content Section
+#service_content {
+    padding: 100px 0;
+    .text-box {
+        margin-bottom: 25px;
+        i {
+            font-size: 45px;
+            margin: 0 auto;
+            background: $grad2;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            @include setTransition(all,
+            .3s);
+        }
+        h5 {
+            letter-spacing: .8px;
+            margin-bottom: 10px;
+        }
+        p {
+            color: $paraC;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 24px;
+        }
+        &:hover {
+            i {
+                transform: rotateY(-180deg);
+            }
+        }
+    }
+}
+
+// Services Awesome Section
+#awesome.for-services {
+    .section_title {
+        width: 100%;
+    }
+    h3 {
+        display: inline-block;
+        margin-bottom: 0;
+    }
+    button {
+        margin-top: 10px;
+    }
+}
+
+// Services Pricing Section
+#pricing {
+    padding: 100px 0;
+    background: #f5f5f5;
+    .price-card {
+        padding: 25px;
+        background: white;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        .price {
+            margin-bottom: 25px;
+            h3 {
+                display: inline-block;
+                height: 120px;
+                width: 120px;
+                line-height: 110px;
+                border: 2px solid $primaryC;
+                @include setTransition(all,
+                .3s);
+                @include border-radius(50%);
+                text-align: center;
+                font-size: 45px;
+                position: relative;
+                margin-bottom: 30px;
+                span {
+                    position: absolute;
+                    bottom: -25px;
+                    left: 44px;
+                    display: block;
+                    font-size: 14px;
+                    color: $paraC;
+                    font-weight: 300;
+                    @include setTransition(all,
+                    .3s);
+                }
+            }
+            h5 {
+                @include setTransition(all,
+                .3s);
+                text-transform: uppercase;
+            }
+        }
+        .serv-list {
+            margin-bottom: 15px;
+            li {
+                font-size: 14px;
+                line-height: 22px;
+                color: $paraC;
+                padding: 10px 0;
+                @include setTransition(all,
+                .3s);
+                &:hover {
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+            }
+        }
+        button {
+            width: 100%;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 10px 0;
+            color: $paraC;
+            background: white;
+            border: 1px solid $primaryC;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            @include setTransition(all,
+            .3s);
+            &::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                transform: translate(-100%, 0);
+                z-index: -1;
+                background: $secondaryC;
+                @include setTransition(all,
+                .3s);
+                opacity: 0;
+                visibility: hidden;
+            }
+            &:hover {
+                color: white !important;
+                border: 1px solid #161616 !important;
+                &::before {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translate(0, 0);
+                }
+            }
+        }
+        .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: $primaryC;
+            z-index: -1;
+            bottom: -100%;
+        }
+        &:hover {
+            h3 {
+                color: $primaryC;
+                transform: scale(1.05);
+                border-color: white;
+                background-color: white;
+                box-shadow: 0 0 15px 4px white;
+                span {
+                    color: $primaryC;
+                    transform: scale(1.05);
+                }
+            }
+            h5 {
+                color: white;
+            }
+            .serv-list {
+                li {
+                    color: white;
+                }
+            }
+            button {
+                border: 1px solid white;
+                color: $primaryC;
+            }
+        }
+    }
+}

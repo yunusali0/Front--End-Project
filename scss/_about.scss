@@ -1,0 +1,240 @@
+// About Heading Section
+#about_heading {
+    padding: 100px 0;
+    width: 100%;
+    background-image: url("http://corpthemes.com/html/ibox/images/parallax/parallax-page.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: white;
+        opacity: 0.5;
+    }
+    .section_title {
+        z-index: 1;
+        margin-bottom: 0;
+        h3 {
+            margin-bottom: 15px;
+        }
+        .page_address {
+            ul {
+                padding: 0;
+                margin-bottom: 24px;
+                li {
+                    position: relative;
+                    display: inline-block;
+                    margin-right: 5px;
+                    color: #1a1e1a;
+                    font-weight: 500;
+                    position: relative;
+                    font-size: 14px;
+                    a {
+                        color: $secondaryC;
+                        @include setTransition(all,
+                        .3s);
+                        &:hover {
+                            color: $primaryC;
+                            text-decoration: none;
+                        }
+                    }
+                }
+                i {
+                    font-size: 12px;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+// About Info Section
+#about-info {
+    padding: 100px 0;
+    .section_title {
+        h3 {
+            span {
+                background: $grad2;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    }
+    .text-box {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 28px;
+        color: $paraC;
+    }
+    ul {
+        background: #393939;
+        margin-bottom: 0;
+        .col-md-4 {
+            line-height: 0;
+        }
+        li {
+            width: 100%;
+            display: inline-block;
+            .icon-box {
+                text-align: center;
+                height: 200px;
+                position: relative;
+                overflow: hidden;
+                z-index: 1;
+                i {
+                    margin-top: 50px;
+                    font-size: 55px;
+                    line-height: 56px;
+                    margin-bottom: 20px;
+                    color: $primaryC;
+                }
+                h6 {
+                    color: white;
+                    margin-bottom: 0;
+                }
+                .overlay {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    bottom: -100%;
+                    background: $secondaryC;
+                    opacity: .5;
+                    z-index: -1;
+                }
+            }
+        }
+    }
+}
+
+// Counters Section
+#counters {
+    padding: 30px 0;
+    background-image: url("../img/para-counters.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .counter_box {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        .icon {
+            display: inline-block;
+            color: white;
+            font-size: 20px;
+            width: 50px;
+            height: 50px;
+            margin-top: 5px;
+            @include border-radius(50%);
+            background: $primaryC;
+            border: 1px solid $primaryC;
+            @include setTransition(all,
+            .3s);
+            position: relative;
+            i {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            &:hover {
+                color: $primaryC;
+                background: white;
+                border: 5px solid $primaryC;
+            }
+        }
+        .text-counter {
+            display: inline-block;
+            margin-left: 15px;
+            .number-counter {
+                font-size: 24px;
+            }
+            .name-counter {
+                font-size: 14px;
+                color: $paraC;
+            }
+        }
+    }
+}
+
+// Our Team Section
+#team {
+    padding: 100px 0 75px;
+    .card {
+        border: none;
+        background: #f9f9f9;
+        text-align: center;
+        padding: 110px 15px 30px;
+        margin-bottom: 25px;
+        .card-body {
+            padding: 0;
+            .name {
+                color: $secondaryC;
+            }
+            .position {
+                color: $primaryC;
+            }
+            p {
+                font-size: 14px;
+                font-weight: 300;
+                color: $paraC;
+                margin-bottom: 71px;
+            }
+            ul {
+                padding: 0;
+                margin: 0;
+                li {
+                    display: inline-block;
+                    padding: 0 10px;
+                    line-height: 22px;
+                    a {
+                        font-size: 14px;
+                        color: $paraC;
+                        i {
+                            @include setTransition(all,
+                            .3s);
+                        }
+                        &:hover i {
+                            transform: scale(1.12);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .member {
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 25px;
+        img {
+            max-width: 100%;
+        }
+        .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, rgba(17, 153, 142, 0.5), rgba(56, 239, 125, .5));
+            bottom: -100%;
+            .arrow {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 80px;
+                width: 100px;
+                height: 100px;
+                @include border-radius(50%);
+                background: rgba($color: #ffffff, $alpha: .5);
+                text-align: center;
+                line-height: 100px;
+                color: white;
+            }
+        }
+    }
+}

@@ -1,0 +1,369 @@
+// Page Heading
+#intro {
+    .topbar.black {
+        background-color: $secondaryC;
+    }
+    .navbar.light {
+        background-color: white !important;
+        a {
+            color: $secondaryC;
+        }
+    }
+}
+
+// Blog Heading Section
+#blog {
+    padding: 100px 0;
+    width: 100%;
+    background-image: url("http://corpthemes.com/html/ibox/images/parallax/parallax-page.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: white;
+        opacity: 0.5;
+    }
+    .section_title {
+        z-index: 1;
+        margin-bottom: 0;
+        h3 {
+            margin-bottom: 15px;
+        }
+        .page_address {
+            ul {
+                padding: 0;
+                margin-bottom: 24px;
+                li {
+                    position: relative;
+                    display: inline-block;
+                    margin-right: 5px;
+                    color: #1a1e1a;
+                    font-weight: 500;
+                    position: relative;
+                    font-size: 14px;
+                    a {
+                        color: $secondaryC;
+                        @include setTransition(all,
+                        .3s);
+                        &:hover {
+                            color: $primaryC;
+                            text-decoration: none;
+                        }
+                    }
+                }
+                i {
+                    font-size: 12px;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+// Blog Content Section
+#blog_content {
+    padding: 100px 0;
+    .media.left {
+        margin-right: 20px;
+        .main_img {
+            margin-right: 40px;
+            position: relative;
+            overflow: hidden;
+            &::before {
+                content: "\f00c";
+                font-family: 'font awesome 5 free';
+                font-weight: 900;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                height: 70px;
+                width: 70px;
+                line-height: 70px;
+                font-size: 40px;
+                color: white;
+                @include border-radius(50%);
+                background: rgba(255, 255, 255, 0.3);
+                z-index: 2;
+                opacity: 0;
+                visibility: hidden;
+                @include setTransition(all,
+                .3s);
+            }
+            .overlay {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                transform: translate3d(0, 100%, 0);
+                background: $grad2;
+                opacity: 0;
+                visibility: hidden;
+                @include setTransition(all,
+                .3s);
+            }
+            &:hover {
+                &::before {
+                    opacity: 1;
+                    visibility: visible;
+                }
+                .overlay {
+                    opacity: .7;
+                    visibility: visible;
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+        }
+        .media-body {
+            .head_link {
+                display: inline-block;
+                font-size: 20px;
+                font-weight: 500;
+                color: $thirdC;
+                line-height: 30px;
+                @include setTransition(all,
+                .3s);
+                margin-bottom: 20px;
+                &:hover {
+                    color: #2bd383;
+                    text-decoration: none;
+                }
+            }
+            p {
+                color: $paraC;
+                font-size: 14px;
+                font-weight: 300;
+                line-height: 28px;
+                text-align: justify;
+                padding-bottom: 20px;
+                border-bottom: 1px solid #f2f2f2;
+                margin-bottom: 0;
+            }
+            .card-info {
+                list-style-type: none;
+                padding: 0;
+                margin-bottom: 0;
+                li {
+                    display: inline-block;
+                    vertical-align: middle;
+                    img {
+                        margin-right: 15px;
+                    }
+                    .name,
+                    .date {
+                        display: block;
+                        color: $thirdC;
+                        font-size: 14px;
+                        margin-bottom: 0;
+                        @include setTransition(all,
+                        .3s);
+                        &:hover {
+                            color: $primaryC;
+                            text-decoration: none;
+                        }
+                    }
+                    .name {
+                        font-weight: 600;
+                    }
+                    .date {
+                        font-weight: 300;
+                    }
+                }
+            }
+        }
+    }
+    .widget {
+        width: 100%;
+        .widget_title {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 20px;
+            color: $thirdC;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            display: block;
+        }
+        label {
+            width: 100%;
+            position: relative;
+            margin-bottom: 40px;
+            .search-box {
+                display: block;
+                width: 100%;
+                border: 1px solid #f2f2f2;
+                padding: 10px 13px;
+                font-weight: 300;
+                font-size: 14px;
+                @include setTransition(all,
+                .3s);
+                &:focus {
+                    outline: none;
+                    border: 1px solid $primaryC;
+                }
+            }
+            i {
+                position: absolute;
+                line-height: 43px;
+                right: 15px;
+                bottom: 0;
+                color: #f2f2f2;
+                cursor: pointer;
+                @include setTransition(all,
+                .3s);
+                &:hover {
+                    color: $primaryC;
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+    .media.right {
+        border-bottom: 1px solid #f2f2f2;
+        padding-bottom: 16px;
+        &:last-child {
+            border: none;
+        }
+        .media-img {
+            overflow: hidden;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: $grad1;
+                top: 0;
+                left: 0;
+                transform: translate3d(0, 100%, 0);
+                @include setTransition(all,
+                .3s);
+                opacity: 0;
+                visibility: hidden;
+            }
+            &:hover {
+                &::after {
+                    opacity: .6;
+                    visibility: visible;
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+        }
+        h5 {
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            a {
+                color: $secondaryC;
+                @include setTransition(all,
+                .3s);
+                &:hover {
+                    color: $primaryC;
+                    text-decoration: none;
+                }
+            }
+        }
+        a.time {
+            font-size: 12px;
+            font-weight: 400;
+            color: $paraC;
+            @include setTransition(all,
+            .3s);
+            &:hover {
+                color: $primaryC;
+                text-decoration: none;
+            }
+        }
+    }
+    .cat {
+        ul {
+            margin-bottom: 40px;
+            li {
+                border-bottom: 1px solid #f2f2f2;
+                line-height: 35px;
+                i,
+                a {
+                    font-size: 14px;
+                    color: $secondaryC;
+                    @include setTransition(all,
+                    .3s);
+                }
+                i {
+                    margin-right: 5px;
+                }
+                a {
+                    text-transform: capitalize;
+                    font-weight: 600;
+                    span {
+                        float: right;
+                    }
+                    &:hover {
+                        i,
+                        & {
+                            color: $primaryC;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .tag {
+        a {
+            color: $paraC;
+            font-size: 14px;
+            font-weight: 400;
+            display: inline-flex;
+            padding: 5px 10px;
+            border: 1px solid #f2f2f2;
+            margin: 0 10px 10px 0;
+            text-transform: capitalize;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            @include setTransition(all,
+            .3s);
+            &::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                transform: translate3d(-100%, 0, 0);
+                background: $primaryC;
+                z-index: -1;
+                visibility: hidden;
+                opacity: 0;
+                @include setTransition(all,
+                .3s);
+            }
+            &:hover {
+                text-decoration: none;
+                color: white;
+                &::before {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+            &.checked {
+                color: white;
+                text-decoration: none;
+                &::before {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+        }
+    }
+}
